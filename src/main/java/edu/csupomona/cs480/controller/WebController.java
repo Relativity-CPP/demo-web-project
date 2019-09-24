@@ -51,9 +51,9 @@ public class WebController {
 		// with the URL: http://localhost:8080/
 		return "OK";
 	}
-	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
+	@RequestMapping(value = "/cs480/alex", method = RequestMethod.GET)
 	String alex() {
-		return "Alex did part 3 of the assignment";	
+		return "Alex added a method here";	
 	}	
 	
 	@RequestMapping(value = "/cs480/aaron", method = RequestMethod.GET)
