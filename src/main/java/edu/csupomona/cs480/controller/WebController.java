@@ -58,7 +58,12 @@ public class WebController {
 	
 	@RequestMapping(value = "/cs480/aaron", method = RequestMethod.GET)
 	String aaron() {
-		return "Aaron Lewis did a thing";	
+		return "Aaron Lewis did a thing";
+	}
+
+	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
+	String alejandro() {
+		return "Alejandro did something here";
 	}
 
 	/**
