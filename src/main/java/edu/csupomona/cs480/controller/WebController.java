@@ -1,6 +1,10 @@
 package edu.csupomona.cs480.controller;
 
 import java.util.List;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,6 +58,33 @@ public class WebController {
 	@RequestMapping(value = "/cs480/alex", method = RequestMethod.GET)
 	String alex() {
 		return "Alex added a method here";	
+	}
+	@RequestMapping(value = "/cs480/alex4", method = RequestMethod.GET)
+	String alex4() {
+		Document doc;
+		 try {
+
+            // need http protocol
+            doc = Jsoup.connect("http://google.com").get();
+
+            // get page title
+            String title = doc.title();
+            System.out.println("title : " + title);
+
+            // get all links
+            Elements links = doc.select("a[href]");
+            for (Element link : links) {
+
+                // get the value from href attribute
+                System.out.println("\nlink : " + link.attr("href"));
+                System.out.println("text : " + link.text());
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	     return "Hello World";
 	}	
 	
 	@RequestMapping(value = "/cs480/aaron", method = RequestMethod.GET)
